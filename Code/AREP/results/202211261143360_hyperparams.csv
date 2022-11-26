@@ -1,0 +1,25 @@
+hyperparameter,value,description
+algorithm,ReRe,
+B,30,Look-back param. of RePAD.
+F,1,Predict-forward param. of RePAD.
+THRESHOLD_STRENGTH,3,Coefficient of sigma when calculating threshold.
+USE_WINDOW,True,Whether to use window-mode execution.
+WINDOW_SIZE,800,The size of the window when calculating AARE and thd values.
+USE_AGING,True,Whether to use aging when calculating AARE.
+AGE_POWER,2.5,The power to which the calculated linear aging coefficient is raised.
+USE_AUTOMATIC_WS_AP,True,Whether to use automatic setting of the WS and AP parameters.
+USE_OFFSET_COMP,True,Whether to use offset compensation.
+OFFSET_WINDOW_SIZE,50,The number of values to use with the offset compensation algorithm.
+OFFSET_PERCENTAGE,0,The percentage of values to be above threshold to trigger LSTM retrain.
+USE_AUTOMATIC_OFFSET,True,Whether to use automatic tuning of offset compensation parameters.
+ACCEPTABLE_AVG_DURATION,1,[seconds]: the maximum allowed duration of one timestep on average.
+NUM_EPOCHS,30,Number of epochs when training the LSTM model.
+NUM_NEURONS,30,Number of neurons of the LSTM model.
+FILENAME,ec2_cpu_utilization_ac20cd.csv,The name of the file containing input data.
+DO_DIV,True,"Whether to divide data by the maximum times 1,1."
+USE_LESS,False,Whether to use only the beginning of the dataset.
+DEBUG,False,Whether to print debug info to the console.
+NOTES,arep test,Any further notes.
+TOTAL_TIME,38.25390577316284,Total time spent in seconds.
+start_time,1669459416.9731767,INTERNAL PARAMETER FOR LIVE PLOTTER!
+full_size,4032,INTERNAL PARAMETER FOR LIVE PLOTTER!

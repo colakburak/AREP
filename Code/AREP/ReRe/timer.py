@@ -44,7 +44,7 @@ def end_timestep(self, time):
                     1 / (self.retrain_count + 1))
         self.retrain_count += 1
     # using offset compensation, retrains can occur due to either a pattern change, an anomaly or an offset retrain
-    elif self.USE_OFFSET_COMP:
+    """ elif self.USE_OFFSET_COMP:
         # LSTM_1 + LSTM_2 == 2 -> 2LSTM timestep
         if (self.pattern_change_1[time] or self.anomaly_1[time] or self.offset_retrain_trigger_1[time]) + \
                 (self.pattern_change_2[time] or self.anomaly_2[time] or self.offset_retrain_trigger_2[time]) == 2:
@@ -61,8 +61,8 @@ def end_timestep(self, time):
         else:
             self.avg_dur_normal = (self.avg_dur_normal * (time - self.retrain_count) + (self.current_duration / 2)) * \
                                   (1 / (time - self.current_duration + 1))
-    # if we don't use offset compensation, retrains can occur only as a result of a pattern change or an anomaly
-    else:
+    # if we don't use offset compensation, retrains can occur only as a result of a pattern change or an anomaly """
+    """ else:
         # LSTM_1 + LSTM_2 == 2 -> 2LSTM timestep
         if (self.pattern_change_1[time] or self.anomaly_1[time]) + \
                 (self.pattern_change_2[time] or self.anomaly_2[time]) == 2:
@@ -78,4 +78,4 @@ def end_timestep(self, time):
         # LSTM_1 + LSTM_2 == 0 -> 2normal timestep
         else:
             self.avg_dur_normal = (self.avg_dur_normal * (time - self.retrain_count) + (self.current_duration / 2)) * \
-                                  (1 / (time - self.current_duration + 1))
+                                  (1 / (time - self.current_duration + 1)) """

@@ -103,7 +103,7 @@ def compensate_offset(self, time):
             else:
                 self.offset_retrain_trigger_1.insert(time, False)
 
-            # actually trigger LSTM retrain if necessary for detector 2
+            """ # actually trigger LSTM retrain if necessary for detector 2
             if self.offset_retrain_signal_2[self.offset_window_beg] and \
                     check_signal_in_ow(self.offset_window_beg, time, self.pattern_change_2) and \
                     check_signal_in_ow(self.offset_window_beg, time, self.anomaly_2) and \
@@ -111,7 +111,7 @@ def compensate_offset(self, time):
                 trigger_lstm_retrain(self, time, self.lstm_model_2, self.tmp_lstm_model_2, self.predicted_2)
                 self.offset_retrain_trigger_2.insert(time, True)
             else:
-                self.offset_retrain_trigger_2.insert(time, False)
+                self.offset_retrain_trigger_2.insert(time, False) """
 
 
 def trigger_lstm_retrain(self, time, lstm_model, tmp_lstm_model, predicted):

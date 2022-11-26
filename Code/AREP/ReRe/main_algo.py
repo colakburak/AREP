@@ -120,7 +120,7 @@ def next_timestep(self, time):
                 detection_is_anomaly(self, time, self.anomaly_1, self.pattern_change_1, self.predicted_1,
                                      self.lstm_model_1, 'ANOMALY_1')
 
-        # DETECTOR 2
+        """ # DETECTOR 2
         # adding the new AARE value to the list
         self.AARE_2.insert(time, self.aare(time, self.predicted_2))
         # calculating the threshold value
@@ -153,10 +153,10 @@ def next_timestep(self, time):
             else:
                 # it IS an anomaly
                 detection_is_anomaly(self, time, self.anomaly_2, self.pattern_change_2, self.predicted_2,
-                                     self.lstm_model_2, 'ANOMALY_2')
+                                     self.lstm_model_2, 'ANOMALY_2') """
 
         # deciding if both detectors show an anomaly
-        if self.anomaly_1[time] and self.anomaly_2[time]:
+        if self.anomaly_1[time]: #and self.anomaly_2[time]:
             self.anomaly_aggr.insert(time, True)
             if not self.STATUS_BAR:
                 print('ANOMALY at timestep {}!'.format(time))
